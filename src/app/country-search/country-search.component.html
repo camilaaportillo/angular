@@ -1,0 +1,21 @@
+<div class="container mt-5">
+    <h2>Buscar País</h2>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Introduce el nombre del país" [(ngModel)]="countryName" />
+        <button class="btn btn-primary" (click)="searchCountry()">Buscar</button>
+    </div>
+    <div *ngIf="countryData" class="card mt-4">
+        <img [src]="countryData.flags.svg" class="card-img-top" alt="Bandera del país" />
+        <div class="card-body">
+            <h5 class="card-title">{{ countryData.name.common }}</h5>
+            <p class="card-text">Capital: {{ countryData.capital[0] }}</p>
+            <p class="card-text">Población: {{ countryData.population | number }}</p>
+            <p class="card-text">Región: {{ countryData.region }}</p>
+            <ul class="list-group list-group-flush">
+                <li *ngFor="let currency of countryData.currencies | keyvalue" class="list-group-item">
+                   
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

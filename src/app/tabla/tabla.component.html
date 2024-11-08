@@ -1,0 +1,29 @@
+
+
+<div class="container mt-4">
+    
+    <h2 class="text-center text-primary">Tabla de Registros Aleatorios</h2>
+    <!-- Botón para mostrar/ocultar la tabla -->
+    <button class="btn btn-primary mb-3" (click)="toggleTable()">
+    {{ showTable ? 'Ocultar Tabla' : 'Mostrar Tabla' }}
+    </button>
+    <!-- Tabla que se muestra/oculta según el valor de showTable -->
+    <div *ngIf="showTable">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Valor Aleatorio</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let item of randomData">
+            <td>{{ item.id }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.value }}</td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
